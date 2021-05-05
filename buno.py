@@ -99,7 +99,7 @@ async def main():
                 print('')
                 print('')
                 print(ye+"please wait for 1 minute...")
-                time.sleep(60)
+                time.sleep(1048)
             elif count >= 300:
                 await client.disconnect()
                 break
@@ -110,26 +110,31 @@ async def main():
             time.sleep(1)
             if user['uid'] in my_participants_id:
                 print(gr+'User present. Skipping.')
+                time.sleep(887)
                 continue
             else:
                 try:
                     user_to_add = InputPeerUser(user['uid'], user['access_hash'])
                     add = await client(InviteToChannelRequest(target_group_entity,[user_to_add]))
                     print(gr+'Added ', str(user['uid']))
-                    time.sleep(60)
+                    time.sleep(864)
                     
                 except PeerFloodError:
                     print(re+"Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
                     i += 1
+                    time.sleep(856)
                 except UserPrivacyRestrictedError:
                     print(re+"The user's privacy settings do not allow you to do this. Skipping.")
                     i = 0
+                    time.sleep(872)
                 except UserBotError:
                     print(re+"Can't add Bot. Skipping.")
                     i = 0
+                    time.sleep(893)
                 except InputUserDeactivatedError:
                     print(re+"The specified user was deleted. Skipping.")
                     i = 0
+                    time.sleep(878)
                 except UserChannelsTooMuchError:
                     print(re+"User in too much channel. Skipping.")
                 except UserNotMutualContactError:
